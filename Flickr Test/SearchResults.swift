@@ -86,7 +86,7 @@ extension SearchResults {
                 DispatchQueue.main.async {
                     completion(results)
                 }
-                }.resume()
+            }.resume()
         }
     }
 }

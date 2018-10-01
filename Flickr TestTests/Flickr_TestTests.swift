@@ -25,11 +25,6 @@ class Flickr_TestTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
     func testSearchResultsMalformedTitle() {
         XCTAssert(SearchResults(title: "") == nil)
     }
@@ -61,18 +56,9 @@ class Flickr_TestTests: XCTestCase {
         }
     }
     func testSimpleSearch() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
         SearchResults.results(matching: "sun") { results in
             XCTAssert(results.count > 0);
         }
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
+
