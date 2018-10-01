@@ -27,10 +27,11 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate, UISear
         self.pageViewController = UIPageViewController(transitionStyle: .pageCurl, navigationOrientation: .horizontal, options: nil)
         self.pageViewController!.delegate = self
 
-        let startingViewController: DataViewController = self.modelController.viewControllerAtIndex(0, storyboard: self.storyboard!)!
-        let viewControllers = [startingViewController]
-        self.pageViewController!.setViewControllers(viewControllers, direction: .forward, animated: false, completion: {done in })
-
+        resetPageViewController(pageData: [SearchResults(title: "Flickr")!])
+        SearchResults.results(matching: "") { results in
+            self.resetPageViewController(pageData: results)
+        }
+        
         self.pageViewController!.dataSource = self.modelController
 
         self.addChildViewController(self.pageViewController!)
@@ -92,14 +93,22 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate, UISear
         return .mid
     }
 
+    // MARK: - Reset
+    
+    func resetPageViewController(pageData: [SearchResults]) {
+        self.modelController.pageData = pageData
+        let startingViewController: DataViewController = self.modelController.viewControllerAtIndex(0, storyboard: self.storyboard!)!
+        let viewControllers = [startingViewController]
+        self.pageViewController!.setViewControllers(viewControllers, direction: .forward, animated: false, completion: {done in })
+    }
+    
     // MARK: - UISearchResultsUpdating
     
     func updateSearchResults(for searchController: UISearchController) {
         if let tags = searchController.searchBar.text {
             SearchResults.results(matching: tags) { results in
-                print(results)
+                self.resetPageViewController(pageData: results)
             }
         }
     }
 }
-
