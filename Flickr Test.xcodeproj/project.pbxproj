@@ -16,6 +16,7 @@
 		E9A3DE522162370A0032D34E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9A3DE502162370A0032D34E /* LaunchScreen.storyboard */; };
 		E9A3DE5D2162370A0032D34E /* Flickr_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A3DE5C2162370A0032D34E /* Flickr_TestTests.swift */; };
 		E9A3DE682162370A0032D34E /* Flickr_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A3DE672162370A0032D34E /* Flickr_TestUITests.swift */; };
+		E9A3DE762162372A0032D34E /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A3DE752162372A0032D34E /* SearchResults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		E9A3DE632162370A0032D34E /* Flickr TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Flickr TestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9A3DE672162370A0032D34E /* Flickr_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flickr_TestUITests.swift; sourceTree = "<group>"; };
 		E9A3DE692162370A0032D34E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9A3DE752162372A0032D34E /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				E9A3DE45216237090032D34E /* RootViewController.swift */,
 				E9A3DE47216237090032D34E /* DataViewController.swift */,
 				E9A3DE49216237090032D34E /* ModelController.swift */,
+				E9A3DE752162372A0032D34E /* SearchResults.swift */,
 				E9A3DE4B216237090032D34E /* Main.storyboard */,
 				E9A3DE4E2162370A0032D34E /* Assets.xcassets */,
 				E9A3DE502162370A0032D34E /* LaunchScreen.storyboard */,
@@ -264,6 +267,7 @@
 			files = (
 				E9A3DE46216237090032D34E /* RootViewController.swift in Sources */,
 				E9A3DE4A216237090032D34E /* ModelController.swift in Sources */,
+				E9A3DE762162372A0032D34E /* SearchResults.swift in Sources */,
 				E9A3DE48216237090032D34E /* DataViewController.swift in Sources */,
 				E9A3DE44216237090032D34E /* AppDelegate.swift in Sources */,
 			);
