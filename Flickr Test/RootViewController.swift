@@ -8,13 +8,20 @@
 
 import UIKit
 
-class RootViewController: UIViewController, UIPageViewControllerDelegate {
+class RootViewController: UIViewController, UIPageViewControllerDelegate, UISearchResultsUpdating {
 
     var pageViewController: UIPageViewController?
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let search = UISearchController(searchResultsController: nil)
+        search.searchResultsUpdater = self
+        search.obscuresBackgroundDuringPresentation = false
+        search.searchBar.placeholder = "Tags..."
+        navigationItem.searchController = search
+        
         // Do any additional setup after loading the view, typically from a nib.
         // Configure the page view controller and add it as a child view controller.
         self.pageViewController = UIPageViewController(transitionStyle: .pageCurl, navigationOrientation: .horizontal, options: nil)
@@ -85,6 +92,14 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
         return .mid
     }
 
-
+    // MARK: - UISearchResultsUpdating
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if let tags = searchController.searchBar.text {
+            SearchResults.results(matching: tags) { results in
+                print(results)
+            }
+        }
+    }
 }
 
